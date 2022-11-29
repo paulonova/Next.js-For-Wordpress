@@ -18,3 +18,17 @@ Instuctions:
 4 - Copy and adapt the code into the project
 
 5 - In \_app.js det the <ApolloProvider client={client}></ApolloProvider> as a main component.
+
+## GraphQl Fragments
+
+<p>When we need to use/repeat the same fields in multiple queries, making changes can be tedious as we would have to update at all places.😬 This is where fragments come in handy </p>
+
+Link: https://codeytek.com/are-you-using-fragments-in-graphql/
+
+## Next Js data fetching
+
+Link: https://nextjs.org/docs/basic-features/data-fetching/overview
+
+### Using getStaticProps to fetch data from a CMS
+
+Link: https://nextjs.org/docs/basic-features/data-fetching/get-static-props
