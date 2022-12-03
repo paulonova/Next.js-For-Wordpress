@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.scss";
 import client from "../apollo/client";
-//import GET_POSTS from "../queries/get-menus";
+import GET_POSTS from "../queries/get-menus";
 import { gql } from "@apollo/client";
 
 export default function Home() {
@@ -23,21 +23,24 @@ export default function Home() {
 }
 
 export async function getStaticProps(context) {
-  const { data, loading, networkStatus } = await client.query({
-    query: gql`
-            posts {
-              edges {
-                node {
-                  title
-                  slug
-                  date
-                }
+  const data = await client
+    .query({
+      query: gql`
+        query NewQuery {
+          posts {
+            edges {
+              node {
+                uri
+                title
+                date
               }
             }
-          `,
-  });
+          }
+        }
+      `,
+    })
+    .then((res) => console.log("RESULT: ", res));
 
-  console.log("DATA: ", data);
   return {
     props: {}, // will be passed to the page component as props
   };

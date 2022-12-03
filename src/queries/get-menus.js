@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client";
-//import MenuFragment from "./fragments/menus";
+import MenuFragment from "./fragments/menus";
 
 /**
  * Here I create a Fragment in GraphQl and the tutorial is here:
@@ -7,50 +7,15 @@ import { gql } from "@apollo/client";
  */
 
 const GET_POSTS = gql`
-  posts {
+  query posts {
     edges {
       node {
-        title
-        slug
         date
+        title
+        uri
       }
     }
   }
 `;
 
 export default GET_POSTS;
-
-/**
- * headerMenus: menuItems(where: {location: HCMS_MENU_HEADER, parentId: "0"}) {
-  edges {
-    node {
-      ...MenuFragment
-      childItems {
-        edges {
-          node {
-            id
-            label
-            url
-            path
-          }
-        }
-      }
-    }
-  }
-}
-footerMenus: menuItems(where: {location: HCMS_MENU_FOOTER, parentId: "0"}) {
-  edges {
-    node {
-      ...MenuFragment
-      childItems {
-        edges {
-          node {
-            ...MenuFragment
-          }
-        }
-      }
-    }
-  }
-}
-${MenuFragment}
- */
