@@ -1,32 +1,4 @@
 
-
-html,
-body {
-  font-family: 'Roboto', sans-serif;
-  font-size: 62.5%;
-  margin: 0;
-  padding: 0;
-}
-
-h1{
-  font-size: 3.5rem;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -2,22 +2,13 @@ import Head from "next/head";
 import styles from "../styles/Home.module.scss";
 import client from "../apollo/client";
 import GET_MENUS from "../queries/get-menus";
+import Layout from "../components/layouts";
 
 export default function Home({ menus }) {
-  console.log("Props: ", menus);
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title> .
-        <link rel='icon' href='/favicon' />
-      </Head>
-
-      <main>
-        <h1 className='text-3xl font-bold underline'>
-          Headless Wordpress Next.js
-        </h1>
-      </main>
-    </div>
+    <Layout data={menus}>
+      <h1>Content</h1>
+    </Layout>
   );
 }
 
