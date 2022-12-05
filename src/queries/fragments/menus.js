@@ -1,5 +1,5 @@
 const MenuFragment = `
-fragment ImageFragment on MenuItem {
+fragment MenuFragment on MenuItem {
   id
   label
   url

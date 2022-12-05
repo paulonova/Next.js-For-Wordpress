@@ -1,11 +1,10 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.scss";
 import client from "../apollo/client";
-import GET_POSTS from "../queries/get-menus";
-import { gql } from "@apollo/client";
+import GET_MENUS from "../queries/get-menus";
 
-export default function Home() {
+export default function Home({ menus }) {
+  console.log("Props: ", menus);
   return (
     <div className={styles.container}>
       <Head>
@@ -23,25 +22,20 @@ export default function Home() {
 }
 
 export async function getStaticProps(context) {
-  const data = await client
-    .query({
-      query: gql`
-        query NewQuery {
-          posts {
-            edges {
-              node {
-                uri
-                title
-                date
-              }
-            }
-          }
-        }
-      `,
-    })
-    .then((res) => console.log("RESULT: ", res));
+  const data = await client.query({
+    query: GET_MENUS,
+  });
+
+  const menus = data.data.headerMenus.edges.map((menu) => {
+    return menu;
+  });
 
   return {
-    props: {}, // will be passed to the page component as props
+    props: {
+      menus: {
+        HeaderMenus: data.data.headerMenus.edges,
+        FooterMenus: data.data.footerMenus.edges,
+      },
+    },
   };
 }
