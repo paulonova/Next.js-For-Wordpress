@@ -40,6 +40,9 @@ Link: https://nextjs.org/docs/basic-features/data-fetching/get-static-props
 - So I create a Layout Component that will inherit data (Menus from Wordpress) as a props.
 
 > Home Page: Will getStaticProps and save as a props and transfer to Layout Component
+
 > Layout Component: Will get data and send via props to Header
+
 > Header Component: Will receive the data and send via props to Nav Component
+
 > Nav Component will display the result of Wordpress Menu.
