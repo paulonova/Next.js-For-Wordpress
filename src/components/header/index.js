@@ -1,9 +1,12 @@
+import Nav from "../nav";
 import styles from "./header.module.scss";
 
-const Header = ({ title }) => {
+const Header = ({ data }) => {
+  console.log("DataHeader: ", data);
   return (
     <div className={styles["header-container"]}>
-      <h1>{title}</h1>
+      <Nav data={data} />
+      <h1>Header Component</h1>
     </div>
   );
 };

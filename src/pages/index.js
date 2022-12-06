@@ -5,6 +5,7 @@ import GET_MENUS from "../queries/get-menus";
 import Layout from "../components/layouts";
 
 export default function Home({ menus }) {
+  console.log("DataHome: ", menus);
   return (
     <Layout data={menus}>
       <h1>Content</h1>

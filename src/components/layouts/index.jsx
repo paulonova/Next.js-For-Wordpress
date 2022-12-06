@@ -1,8 +1,14 @@
+import Header from "../header";
 import styles from "./layout.module.scss";
 
 const Layout = ({ data, children }) => {
-  console.log("DataProps: ", data);
-  return <div>{children}</div>;
+  console.log("DataLayout: ", data);
+  return (
+    <div>
+      <Header data={data} />
+      {children}
+    </div>
+  );
 };
 
 export default Layout;

@@ -32,3 +32,14 @@ Link: https://nextjs.org/docs/basic-features/data-fetching/overview
 ### Using getStaticProps to fetch data from a CMS
 
 Link: https://nextjs.org/docs/basic-features/data-fetching/get-static-props
+
+# Create a LAYOUT Component
+
+- getStaticProps (Static Site Generation) is only accepted from a page (NOT from a Component), Next.js will pre-render this page at build time using the props returned by getStaticProps.
+
+- So I create a Layout Component that will inherit data (Menus from Wordpress) as a props.
+
+> Home Page: Will getStaticProps and save as a props and transfer to Layout Component
+> Layout Component: Will get data and send via props to Header
+> Header Component: Will receive the data and send via props to Nav Component
+> Nav Component will display the result of Wordpress Menu.
