@@ -54,3 +54,9 @@ Link: https://nextjs.org/docs/basic-features/data-fetching/get-static-props
 * Timeout is calculated with ref to the time in seconds from previous request.
 
 > revalidate: 1 => Means that every 1 second after the first request the user will get a new update from server
+
+# Set Multiple SASS MODULE CLASS
+
+> [styles.classname, styles.otherclassname].join(" ")
+
+> [styles["class-name"], styles.classname].join(" ")
