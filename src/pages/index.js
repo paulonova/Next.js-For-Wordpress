@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.scss";
 import client from "../apollo/client";
 import GET_MENUS from "../queries/get-menus";
 import Layout from "../components/layouts";
+import { isEmpty } from "lodash";
 
 export default function Home({ menus }) {
   console.log("DataHome: ", menus);
@@ -13,7 +14,8 @@ export default function Home({ menus }) {
   );
 }
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
+  console.log("REQUESTING...");
   const data = await client.query({
     query: GET_MENUS,
   });
@@ -29,5 +31,6 @@ export async function getStaticProps(context) {
         FooterMenus: data.data.footerMenus.edges,
       },
     },
+    revalidate: 2, //In seconds
   };
 }

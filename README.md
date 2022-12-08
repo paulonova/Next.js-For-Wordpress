@@ -46,3 +46,11 @@ Link: https://nextjs.org/docs/basic-features/data-fetching/get-static-props
 > Header Component: Will receive the data and send via props to Nav Component
 
 > Nav Component will display the result of Wordpress Menu.
+
+# Incremental Static Regeneration - REVALIDATE
+
+- Regenerate new version of page in the background, ONLY on the first request during that interval.
+
+* Timeout is calculated with ref to the time in seconds from previous request.
+
+> revalidate: 1 => Means that every 1 second after the first request the user will get a new update from server

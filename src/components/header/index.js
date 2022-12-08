@@ -1,8 +1,11 @@
 import Nav from "../nav";
 import styles from "./header.module.scss";
+import { isEmpty } from "lodash";
 
 const Header = ({ data }) => {
-  console.log("DataHeader: ", data);
+  if (isEmpty(data)) {
+    return null;
+  }
   return (
     <div className={styles["header-container"]}>
       <Nav data={data} />
