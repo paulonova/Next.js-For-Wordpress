@@ -60,3 +60,9 @@ Link: https://nextjs.org/docs/basic-features/data-fetching/get-static-props
 > [styles.classname, styles.otherclassname].join(" ")
 
 > [styles["class-name"], styles.classname].join(" ")
+
+## Install React Icons
+
+Link: https://react-icons.github.io/react-icons/
+
+> npm install react-icons --save

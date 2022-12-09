@@ -1,10 +1,20 @@
-import styles from "./footer.module.scss";
+import styles from "./_footer.module.scss";
+import { BsFacebook } from "react-icons/bs";
 
-const Footer = ({ title }) => {
+const Footer = ({ title, footer }) => {
+  console.log("FOOTER: ", footer);
   return (
-    <div className={styles["footer-container"]}>
+    <footer className={styles["footer-container"]}>
       <h1>{title}</h1>
-    </div>
+      <div className={styles.media}>
+        <p>
+          <a target='_blank' href={footer.socialLinks[0].iconUrl}>
+            <BsFacebook />
+          </a>
+        </p>
+        <p>{footer.copyrightText}</p>
+      </div>
+    </footer>
   );
 };
 

@@ -2,13 +2,13 @@ import Nav from "../nav";
 import styles from "./header.module.scss";
 import { isEmpty } from "lodash";
 
-const Header = ({ data }) => {
-  if (isEmpty(data)) {
+const Header = ({ menus, header }) => {
+  if (isEmpty(menus)) {
     return null;
   }
   return (
     <div className={styles["header-container"]}>
-      <Nav data={data} />
+      <Nav header={header} menus={menus} />
       <h1>Header Component</h1>
     </div>
   );

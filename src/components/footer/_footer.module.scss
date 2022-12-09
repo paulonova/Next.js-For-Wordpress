@@ -1,0 +1,33 @@
+
+
+.footer-container{
+  position:fixed;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  padding: 1.5rem;
+  background-color: olive;
+
+  h1{
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .media{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p{
+     margin-right: 20px;
+    }
+
+    a{
+      font-size: 2rem;
+      color: white;
+      &:hover{
+        color: rgb(36, 36, 164);
+      }
+    }
+  }
+}

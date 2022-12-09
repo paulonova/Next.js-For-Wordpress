@@ -1,9 +1,9 @@
 import Link from "next/link";
-import styles from "./nav.module.scss";
+import styles from "./_navigation.module.scss";
 import { Fragment } from "react";
 import { useState } from "react";
 
-const Nav = ({ data }) => {
+const Nav = ({ menus }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const openMenu = () => {
@@ -20,7 +20,7 @@ const Nav = ({ data }) => {
                 <img src='/nasa_logo.png' alt='logo' width='48' height='48' />
               </Link>
             </li>
-            {data.HeaderMenus.map((menu) => {
+            {menus.headerMenus.map((menu) => {
               return (
                 <li key={menu.node.id}>
                   <Link href={menu.node.path}>{menu.node.label}</Link>
@@ -57,7 +57,7 @@ const Nav = ({ data }) => {
                 <img src='/nasa_logo.png' alt='logo' width='100' height='100' />
               </Link>
             </li>
-            {data.HeaderMenus.map((menu) => {
+            {menus.headerMenus.map((menu) => {
               return (
                 <li key={menu.node.id}>
                   <Link href={menu.node.path}>{menu.node.label}</Link>

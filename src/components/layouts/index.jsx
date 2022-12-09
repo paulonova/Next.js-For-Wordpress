@@ -1,11 +1,14 @@
+import Footer from "../footer";
 import Header from "../header";
-import styles from "./layout.module.scss";
+import styles from "./_layout.module.scss";
 
-const Layout = ({ data, children }) => {
+const Layout = ({ menus, children, header, footer }) => {
+  console.log("LayoutData: ", menus);
   return (
     <div>
-      <Header data={data} />
+      <Header header={header} menus={menus} />
       {children}
+      <Footer footer={footer} title='This is the Footer' />
     </div>
   );
 };
