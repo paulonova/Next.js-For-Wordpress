@@ -9,7 +9,7 @@ const Header = ({ menus, header }) => {
   return (
     <div className={styles["header-container"]}>
       <Nav header={header} menus={menus} />
-      <h1>Header Component</h1>
+      <h1>{header.siteTitle}</h1>
     </div>
   );
 };

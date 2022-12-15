@@ -3,7 +3,7 @@ import styles from "./_navigation.module.scss";
 import { Fragment } from "react";
 import { useState } from "react";
 
-const Nav = ({ menus }) => {
+const Nav = ({ menus, header }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const openMenu = () => {
@@ -17,7 +17,12 @@ const Nav = ({ menus }) => {
           <ul className={styles["flex-content"]}>
             <li>
               <Link href='/'>
-                <img src='/nasa_logo.png' alt='logo' width='48' height='48' />
+                <img
+                  src={header.siteLogoUrl}
+                  alt='logo'
+                  width='100'
+                  height='100'
+                />
               </Link>
             </li>
             {menus.headerMenus.map((menu) => {
